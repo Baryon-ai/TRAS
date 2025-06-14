@@ -104,8 +104,53 @@ def get_tag_info(tag):
         return None
 
 
-def generate_changelog(tag):
-    """체인지로그 생성"""
+def generate_smart_changelog(tag):
+    """지능적인 체인지로그 생성"""
+    try:
+        # 새로운 체인지로그 생성기 사용
+        changelog_script = Path(__file__).parent / "changelog_generator.py"
+        
+        # 이전 태그 찾기
+        result = subprocess.run(
+            ["git", "describe", "--tags", "--abbrev=0", f"{tag}^"], 
+            capture_output=True, 
+            text=True
+        )
+        
+        if result.returncode == 0:
+            prev_tag = result.stdout.strip()
+            print(f"📝 스마트 체인지로그 생성: {prev_tag}..{tag}")
+            
+            # 체인지로그 생성기 실행
+            changelog_result = subprocess.run([
+                sys.executable, str(changelog_script), prev_tag, tag
+            ], capture_output=True, text=True, check=True)
+            
+            # 출력에서 실제 체인지로그 부분만 추출 (=== 이후)
+            output_lines = changelog_result.stdout.split('\n')
+            changelog_start = False
+            changelog_lines = []
+            
+            for line in output_lines:
+                if '=' * 30 in line:
+                    changelog_start = True
+                    continue
+                if changelog_start:
+                    changelog_lines.append(line)
+            
+            if changelog_lines:
+                return '\n'.join(changelog_lines).strip()
+        
+        # 폴백: 기본 체인지로그
+        return generate_basic_changelog(tag)
+        
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        print(f"⚠️  스마트 체인지로그 생성 실패, 기본 방식 사용: {e}")
+        return generate_basic_changelog(tag)
+
+
+def generate_basic_changelog(tag):
+    """기본 체인지로그 생성 (폴백용)"""
     try:
         # 이전 태그 찾기
         result = subprocess.run(
@@ -116,7 +161,7 @@ def generate_changelog(tag):
         
         if result.returncode == 0:
             prev_tag = result.stdout.strip()
-            print(f"📝 체인지로그 생성: {prev_tag}..{tag}")
+            print(f"📝 기본 체인지로그 생성: {prev_tag}..{tag}")
             
             # 커밋 로그 가져오기
             log_result = subprocess.run(
@@ -211,8 +256,8 @@ def create_github_release(tag_info, is_draft=False, is_prerelease=False):
     
     print(f"🚀 GitHub 릴리스 생성 중: {tag}")
     
-    # 체인지로그 생성
-    changelog = generate_changelog(tag)
+    # 지능적인 체인지로그 생성
+    changelog = generate_smart_changelog(tag)
     
     # 릴리스 노트 생성
     release_notes = get_release_notes_template(version, changelog)
