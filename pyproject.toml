@@ -44,10 +44,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/username/integrated-social-media-talent-recommendation-analysis-system"
-Repository = "https://github.com/username/integrated-social-media-talent-recommendation-analysis-system"
-Documentation = "https://github.com/username/integrated-social-media-talent-recommendation-analysis-system/wiki"
-Issues = "https://github.com/username/integrated-social-media-talent-recommendation-analysis-system/issues"
+Homepage = "https://github.com/Baryon-ai/TRAS"
+Repository = "https://github.com/Baryon-ai/TRAS"
+Documentation = "https://github.com/Baryon-ai/TRAS/wiki"
+Issues = "https://github.com/Baryon-ai/TRAS/issues"
 
 # 빌드 설정 - 스크립트 파일들 포함
 [tool.hatch.build.targets.wheel]
@@ -61,6 +61,11 @@ include = [
 [project.scripts]
 talent-analyzer = "main:main"
 email-analyzer = "email_analyzer:main"
+
+# 개발 및 릴리스 도구
+tras-version = "scripts.version_manager:main"
+tras-release-github = "scripts.github_release:main"
+tras-release = "scripts.release:main"
 
 [project.optional-dependencies]
 ai = [

@@ -400,6 +400,54 @@ ollama pull solar:10.7b
 - **📚 학습 기능**: 사용자 피드백 기반 모델 개선
 - **🔍 의미적 검색**: 벡터 DB 기반 유사 인재 검색
 
+## 🚀 릴리스 관리
+
+### 🔢 버전 관리 및 릴리스 자동화
+TRAS는 uv 기반의 스마트한 릴리스 관리 시스템을 제공합니다.
+
+#### **🎯 원스톱 릴리스** (권장)
+```bash
+# 패치 릴리스 (3.0.0 → 3.0.1)
+uv run tras-release patch
+
+# 마이너 릴리스 (3.0.0 → 3.1.0)  
+uv run tras-release minor
+
+# 메이저 릴리스 (3.0.0 → 4.0.0)
+uv run tras-release major
+
+# 직접 버전 지정
+uv run tras-release 3.2.1
+
+# 드래프트 릴리스
+uv run tras-release patch --draft
+```
+
+#### **🔧 단계별 릴리스**
+```bash
+# 1. 버전만 업데이트
+uv run tras-version patch
+
+# 2. GitHub 릴리스만 생성
+uv run tras-release-github
+
+# 또는 스크립트 직접 실행
+uv run python scripts/version_manager.py patch
+uv run python scripts/github_release.py
+```
+
+#### **📋 릴리스 프로세스**
+1. **버전 업데이트**: `pyproject.toml`과 `README.md`의 버전 정보 자동 업데이트
+2. **Git 태그 생성**: `v3.0.1` 형식의 태그 생성 및 커밋
+3. **GitHub 푸시**: 변경사항과 태그를 GitHub에 자동 푸시
+4. **릴리스 노트 생성**: 자동 체인지로그와 설치 가이드 포함
+5. **에셋 업로드**: 필요한 파일들을 릴리스에 첨부
+
+#### **⚙️ 사전 요구사항**
+- **GitHub CLI 설치**: `brew install gh` (macOS) 또는 [공식 가이드](https://cli.github.com/)
+- **GitHub 인증**: `gh auth login`으로 GitHub 계정 연결
+- **Git 설정**: 커밋 권한이 있는 Git 저장소
+
 ## 🤝 기여하기
 
 ### 📝 기여 방법
