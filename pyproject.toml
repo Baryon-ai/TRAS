@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "integrated-social-media-talent-recommendation-analysis-system"
-version = "3.3.2"
+version = "3.3.3"
 description = "AI-powered integrated system for analyzing government talent recommendations from emails and social media comments"
 readme = "README.md"
 license = {text = "MIT"}
