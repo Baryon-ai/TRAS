@@ -13,9 +13,9 @@
 
 **🎯 Made with ❤️ for Government Talent Management**
 
-[![GitHub stars](https://img.shields.io/github/stars/username/repo?style=social)](https://github.com/Baryon-ai/TRAS/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/username/repo?style=social)](https://github.com/Baryon-ai/TRAS/network)
-[![GitHub issues](https://img.shields.io/github/issues/username/repo)](https://github.com/Baryon-ai/TRAS/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Baryon-ai/TRAS?style=social)](https://github.com/Baryon-ai/TRAS/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Baryon-ai/TRAS?style=social)](https://github.com/Baryon-ai/TRAS/network)
+[![GitHub issues](https://img.shields.io/github/issues/Baryon-ai/TRAS)](https://github.com/Baryon-ai/TRAS/issues)
 
 </div>
 
