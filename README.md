@@ -162,7 +162,12 @@ emails/
 ├── recommendation_001.eml    # 표준 이메일 파일
 ├── application_002.msg       # Outlook 메시지 파일
 └── inquiry_003.txt           # 텍스트 파일
+
+emails-dev/                   # 참고용 이메일 폴더 (실제 테스트시에는 emails 이름으로 폴더명을 바꿔서 사용하세요.
+
 ```
+
+
 
 ### 🐦 트위터 데이터
 
