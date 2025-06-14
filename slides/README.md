@@ -1,7 +1,7 @@
 # 🎓 TRAS 특강 슬라이드
 ## AI 기반 인재 추천 시스템으로 배우는 자연어처리와 BERT, 그리고 RLHF vs GPRO
 
-### 3시간 대학 특강 자료
+### 4시간 대학 특강 자료
 
 ---
 
@@ -10,15 +10,16 @@
 ### 🎯 학습 목표
 TRAS 오픈소스 프로젝트를 통해 자연어처리의 기초부터 최신 AI 기술까지 체계적으로 학습
 
-### ⏰ 전체 일정 (180분)
+### ⏰ 전체 일정 (240분)
 | 시간 | 섹션 | 주제 | 파일명 |
 |------|------|------|--------|
 | 0-10분 | 소개 | 강의 개요 및 환경 설정 | `main.md` |
 | 10-20분 | Section 1 | TRAS 프로젝트 소개 | `section1_tras_intro.md` |
-| 20-70분 | Section 2 | 자연어처리 기초 | `section2_nlp_basics.md` |
-| 70-130분 | Section 3 | BERT 깊이 이해 | `section3_bert.md` |
-| 130-180분 | Section 4 | RLHF vs GPRO | `section4_rlhf_gpro.md` |
-| 180-190분 | Section 5 | 정리 및 퀴즈 | `section5_summary_quiz.md` |
+| 20-60분 | Section 2 | 자연어처리 기초 | `section2_nlp_basics.md` |
+| 60-110분 | Section 3 | BERT 깊이 이해 | `section3_bert.md` |
+| 110-150분 | Section 4 | RLHF vs GPRO | `section4_rlhf_gpro.md` |
+| 150-200분 | Section 6 | 멀티에이전트 협업 | `section6_multiagent_cooperation.md` |
+| 200-240분 | Section 5 | 정리 및 퀴즈 | `section5_summary_quiz.md` |
 
 ---
 
@@ -66,13 +67,14 @@ marp --server .
 
 ```
 slides/
-├── 📄 README.md                 # 이 파일
-├── 📄 main.md                   # 전체 개요 (10분)
-├── 📄 section1_tras_intro.md    # TRAS 소개 (10분)
-├── 📄 section2_nlp_basics.md    # NLP 기초 (50분)
-├── 📄 section3_bert.md          # BERT 심화 (60분)
-├── 📄 section4_rlhf_gpro.md     # RLHF vs GPRO (50분)
-└── 📄 section5_summary_quiz.md  # 정리 및 퀴즈 (10분)
+├── 📄 README.md                      # 이 파일
+├── 📄 main.md                        # 전체 개요 (10분)
+├── 📄 section1_tras_intro.md         # TRAS 소개 (10분)
+├── 📄 section2_nlp_basics.md         # NLP 기초 (40분)
+├── 📄 section3_bert.md               # BERT 심화 (50분)
+├── 📄 section4_rlhf_gpro.md          # RLHF vs GPRO (40분)
+├── 📄 section6_multiagent_cooperation.md  # 멀티에이전트 협업 (50분)
+└── 📄 section5_summary_quiz.md       # 정리 및 퀴즈 (40분)
 ```
 
 ---
@@ -100,22 +102,27 @@ slides/
 - **핵심 내용**: Factory Pattern, 확장 가능한 설계, 현대적 개발 도구
 - **실습**: TRAS 환경 설정 및 기본 실행
 
-### 📝 Section 2: 자연어처리 기초 (50분)
+### 📝 Section 2: 자연어처리 기초 (40분)
 - **목표**: 컴퓨터가 언어를 이해하는 방법 마스터
 - **핵심 내용**: 토큰화, 임베딩, 어텐션 메커니즘
 - **실습**: TRAS의 텍스트 전처리 파이프라인 분석
 
-### 🧠 Section 3: BERT 깊이 이해 (60분)
+### 🧠 Section 3: BERT 깊이 이해 (50분)
 - **목표**: Transformer부터 BERT까지 완전 정복
 - **핵심 내용**: Multi-head attention, 사전훈련, 파인튜닝
 - **실습**: TRAS에서 BERT 모델 사용 및 성능 비교
 
-### 🎛️ Section 4: RLHF vs GPRO (50분)
+### 🎛️ Section 4: RLHF vs GPRO (40분)
 - **목표**: 인간 피드백 기반 AI 학습 방법론 마스터
 - **핵심 내용**: 보상 모델링, PPO, DPO, Constitutional AI
 - **실습**: 전문가 피드백 시스템 설계
 
-### 🎯 Section 5: 정리 및 퀴즈 (10분)
+### 🤝 Section 6: 멀티에이전트 협업 (50분)
+- **목표**: 여러 AI가 협업하는 차세대 시스템 이해
+- **핵심 내용**: Multi-Agent Systems, MCP 프로토콜, A2A 기술, 지능형 메시지 분류
+- **실습**: TRAS 6.0 멀티에이전트 시스템 설계
+
+### 🎯 Section 5: 정리 및 퀴즈 (40분)
 - **목표**: 전체 학습 내용 점검 및 실무 적용 가이드
 - **핵심 내용**: 개념 총정리, 20문항 퀴즈, 다음 단계 안내
 - **실습**: 자가 진단 및 학습 계획 수립
