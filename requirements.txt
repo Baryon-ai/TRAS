@@ -1,5 +1,13 @@
 # AI 기반 정부 인재 추천 이메일 분석 시스템 필수 라이브러리
 # AI-Powered Government Talent Recommendation Email Analysis System Requirements
+#
+# 🚨 중요: 이 프로젝트는 현재 UV를 사용합니다!
+# 📦 권장 설치 방법: uv sync
+# 🔄 이 파일은 호환성을 위해 유지됩니다.
+#
+# ⚠️  IMPORTANT: This project now uses UV!
+# 📦 Recommended installation: uv sync
+# 🔄 This file is kept for compatibility.
 
 # 필수 라이브러리 (Required)
 requests>=2.31.0          # HTTP 요청 (AI API 통신)

@@ -38,10 +38,32 @@
 ## 🚀 빠른 시작
 
 ### 1. 📥 설치
+
+#### 🚀 UV를 사용한 설치 (권장)
 ```bash
 # 저장소 클론
 git clone <repository-url>
-cd integrated-talent-analyzer
+cd integrated-social-media-talent-recommendation-analysis-system
+
+# UV로 개발환경 구축 (의존성 자동 설치)
+uv sync
+
+# AI 제공자 포함 전체 설치
+uv sync --extra ai
+
+# 개발 도구 포함 설치
+uv sync --dev
+```
+
+#### 📦 전통적인 pip 설치
+```bash
+# 저장소 클론
+git clone <repository-url>
+cd integrated-social-media-talent-recommendation-analysis-system
+
+# 가상환경 생성 및 활성화
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 필수 라이브러리 설치
 pip install -r requirements.txt
@@ -71,8 +93,25 @@ ollama serve
 ```
 
 ### 3. 🎬 실행
+
+#### 🚀 UV 환경에서 실행 (권장)
 ```bash
+# 이메일 분석기 실행
+uv run email_analyzer.py
+
+# 또는 통합 시스템 실행
+uv run main.py
+
+# CLI 도구로 실행 (설치 후)
+uv run talent-analyzer
+```
+
+#### 📦 전통적인 실행 방법
+```bash
+# 가상환경 활성화 후
 python email_analyzer.py
+# 또는
+python main.py
 ```
 
 ### 4. 📊 샘플 데이터로 시작
@@ -185,8 +224,21 @@ CREATE TABLE content_analysis (
 
 ## 💻 시스템 요구사항
 
+### 🚀 UV 설치 (권장)
+```bash
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows (PowerShell)
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# pip으로 설치
+pip install uv
+```
+
 ### 최소 요구사항
-- **Python**: 3.8 이상
+- **Python**: 3.8.1 이상
+- **UV**: 최신 버전 (권장)
 - **RAM**: 4GB 이상
 - **저장공간**: 2GB 이상
 - **운영체제**: Windows 10+, macOS 10.14+, Ubuntu 18.04+
