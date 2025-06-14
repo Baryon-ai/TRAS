@@ -1,29 +1,64 @@
 # TRAS 프로젝트 특별 규칙
 
-## ⚠️ pyproject.toml 버전 관리 주의사항
-**중요**: pyproject.toml에서 버전을 업데이트할 때 다음 규칙을 반드시 지켜라:
+## 🚨 CRITICAL: pyproject.toml 버전 관리 철칙 🚨
+**절대 실수하지 말 것**: pyproject.toml에서 버전을 업데이트할 때 다음 4개 위치를 절대 건드리지 말 것!
 
-### 🔴 절대 하지 말아야 할 것:
-1. `[project.scripts]` 섹션에서 script entry를 버전 번호로 바꾸지 말 것
-   - 잘못된 예: `tras-version = "3.2.0"`  
-   - 올바른 예: `tras-version = "scripts.version_manager:main"`
+### ❌ 버전 번호로 절대 바꾸면 안 되는 4곳:
 
-2. `[tool.mypy]` 섹션의 `python_version`을 프로젝트 버전으로 바꾸지 말 것
-   - 잘못된 예: `python_version = "3.2.0"`
-   - 올바른 예: `python_version = "3.8"`
+#### 1. `[project.scripts]` 섹션
+```toml
+# ❌ 절대 금지: tras-version = "3.3.0"
+# ✅ 정답: tras-version = "scripts.version_manager:main"
+```
 
-3. `[tool.ruff]` 섹션의 `target-version`을 프로젝트 버전으로 바꾸지 말 것
-   - 잘못된 예: `target-version = "3.2.0"`
-   - 올바른 예: `target-version = "py38"`
+#### 2. `[tool.pytest.ini_options]` 섹션
+```toml
+# ❌ 절대 금지: minversion = "3.3.0" 
+# ✅ 정답: minversion = "6.0"
+```
 
-### ✅ 오직 변경해야 할 곳:
-- `[project]` 섹션의 `version = "x.y.z"` **만** 변경할 것
+#### 3. `[tool.mypy]` 섹션
+```toml
+# ❌ 절대 금지: python_version = "3.3.0"
+# ✅ 정답: python_version = "3.8"
+```
 
-### 🚨 오류 징후:
-- `invalid console script` 오류가 발생하면 위 규칙을 확인할 것
-- `uv run` 실행 시 wheel invalid 오류가 발생하면 즉시 이 규칙을 점검할 것
+#### 4. `[tool.ruff]` 섹션
+```toml
+# ❌ 절대 금지: target-version = "3.3.0"
+# ✅ 정답: target-version = "py38"
+```
+
+### ✅ 오직 1곳만 변경:
+```toml
+[project]
+version = "x.y.z"  # 이것만 변경!!
+```
+
+### 🔍 필수 체크리스트 (버전 변경 후 반드시 확인):
+1. ✅ `tras-version = "scripts.version_manager:main"` 유지됨?
+2. ✅ `minversion = "6.0"` 유지됨?
+3. ✅ `python_version = "3.8"` 유지됨?
+4. ✅ `target-version = "py38"` 유지됨?
+
+### 🚨 즉시 대응 방법:
+`invalid console script` 오류 발생 시:
+1. pyproject.toml 열기
+2. 위 4곳 중 버전 번호가 들어간 곳 찾기
+3. 올바른 값으로 즉시 복원
+4. 테스트: `uv run --help`
+
+### 📝 버전 변경 시 안전한 방법:
+```bash
+# 자동화된 스크립트 사용 (권장)
+uv run tras-version patch
+
+# 수동으로 할 때는 [project] version만 변경!
+# 다른 곳은 절대 건드리지 말 것!
+```
 
 ## 💡 기타 규칙
 - 한글 답변 우선
 - BERT 모듈 관련 작업 시 `berts/` 디렉토리 구조 유지
-- 릴리스 관리 시 항상 version_manager.py 스크립트 사용 
+- 릴리스 관리 시 항상 version_manager.py 스크립트 사용
+- pyproject.toml 편집 시 위 체크리스트 필수 확인 

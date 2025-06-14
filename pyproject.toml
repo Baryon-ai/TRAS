@@ -64,7 +64,7 @@ include = [
 [project.scripts]
 talent-analyzer = "main:main"
 email-analyzer = "email_analyzer:main"
-tras-version = "3.3.0"
+tras-version = "scripts.version_manager:main"
 tras-release-github = "scripts.github_release:main"
 tras-release = "scripts.release:main"
 
@@ -108,7 +108,7 @@ extend-exclude = '''
 
 # pytest 설정
 [tool.pytest.ini_options]
-minversion = "3.3.0"
+minversion = "6.0"
 addopts = "-ra -q --strict-markers --strict-config"
 testpaths = [
     "tests",
@@ -157,7 +157,7 @@ exclude_lines = [
 
 # MyPy 설정 (향후 타입 체킹용)
 [tool.mypy]
-python_version = "3.3.0"
+python_version = "3.8"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
@@ -173,7 +173,7 @@ strict_equality = true
 
 # Ruff 설정 (빠른 린터 - flake8 대안)
 [tool.ruff]
-target-version = "3.3.0"
+target-version = "py38"
 line-length = 88
 select = [
     "E",  # pycodestyle errors

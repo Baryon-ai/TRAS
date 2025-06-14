@@ -65,19 +65,42 @@ def increment_version(current_version, bump_type):
 
 
 def update_pyproject_version(new_version):
-    """pyproject.toml의 버전 업데이트"""
+    """pyproject.toml의 [project] 섹션의 버전만 정확히 업데이트"""
     pyproject_path = Path("pyproject.toml")
     content = pyproject_path.read_text(encoding='utf-8')
     
-    # 버전 교체
-    new_content = re.sub(
-        r'version = "[^"]+"',
-        f'version = "{new_version}"',
-        content
-    )
+    # [project] 섹션의 version만 정확히 찾아서 교체
+    # 다른 곳의 version은 절대 건드리지 않음
+    pattern = r'(\[project\][\s\S]*?)version = "[^"]+"'
+    
+    def replace_project_version(match):
+        return match.group(1) + f'version = "{new_version}"'
+    
+    new_content = re.sub(pattern, replace_project_version, content)
+    
+    # 안전성 검증: [project] 섹션의 version이 정확히 업데이트되었는지 확인
+    project_match = re.search(r'\[project\][\s\S]*?version = "([^"]+)"', new_content)
+    if not project_match or project_match.group(1) != new_version:
+        print("❌ [project] 섹션의 버전 업데이트에 실패했습니다!")
+        sys.exit(1)
+    
+    # 추가 안전성 검증: 다른 곳에 잘못된 버전이 들어가지 않았는지 확인
+    forbidden_patterns = [
+        (r'tras-version = "[0-9]+\.[0-9]+\.[0-9]+"', 'script entry에 버전 번호가 들어감'),
+        (r'minversion = "[0-9]+\.[0-9]+\.[0-9]+"', 'pytest minversion에 프로젝트 버전이 들어감'),
+        (r'python_version = "[0-9]+\.[0-9]+\.[0-9]+"', 'mypy python_version에 프로젝트 버전이 들어감'),
+        (r'target-version = "[0-9]+\.[0-9]+\.[0-9]+"', 'ruff target-version에 프로젝트 버전이 들어감')
+    ]
+    
+    for pattern, error_msg in forbidden_patterns:
+        if re.search(pattern, new_content):
+            print(f"❌ 안전성 검증 실패: {error_msg}")
+            print("🔧 pyproject.toml을 수동으로 수정해야 합니다.")
+            sys.exit(1)
     
     pyproject_path.write_text(new_content, encoding='utf-8')
-    print(f"✅ pyproject.toml 버전을 {new_version}로 업데이트했습니다.")
+    print(f"✅ pyproject.toml [project] 섹션의 버전을 {new_version}로 업데이트했습니다.")
+    print("✅ 안전성 검증 완료: 다른 섹션은 변경되지 않았습니다.")
 
 
 def update_readme_version(old_version, new_version):
