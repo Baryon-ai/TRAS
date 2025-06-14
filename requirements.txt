@@ -1,0 +1,22 @@
+# AI 기반 정부 인재 추천 이메일 분석 시스템 필수 라이브러리
+# AI-Powered Government Talent Recommendation Email Analysis System Requirements
+
+# 필수 라이브러리 (Required)
+requests>=2.31.0          # HTTP 요청 (AI API 통신)
+chardet>=5.2.0            # 파일 인코딩 감지
+
+# 선택적 라이브러리 (Optional - 성능 향상)
+python-magic>=0.4.27      # 파일 타입 감지 개선
+beautifulsoup4>=4.12.2    # HTML 이메일 파싱
+pandas>=2.0.0             # 데이터 분석 및 내보내기
+lxml>=4.9.0               # XML/HTML 파싱 (beautifulsoup4 의존성)
+
+# 개발 및 테스트 (Development & Testing)
+pytest>=7.4.0            # 단위 테스트
+pytest-cov>=4.1.0        # 코드 커버리지
+black>=23.0.0             # 코드 포맷팅
+flake8>=6.0.0             # 코드 품질 검사
+
+# 추가 AI 제공자 지원 (Additional AI Provider Support)
+openai>=1.0.0             # OpenAI GPT API (선택사항)
+anthropic>=0.18.0         # Claude API (선택사항)
