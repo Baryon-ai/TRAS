@@ -8,6 +8,17 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![AI Powered](https://img.shields.io/badge/AI-Powered-green.svg)](https://ollama.ai/)
 
+
+<div align="center">
+
+**🎯 Made with ❤️ for Government Talent Management**
+
+[![GitHub stars](https://img.shields.io/github/stars/username/repo?style=social)](https://github.com/username/repo/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/username/repo?style=social)](https://github.com/username/repo/network)
+[![GitHub issues](https://img.shields.io/github/issues/username/repo)](https://github.com/username/repo/issues)
+
+</div>
+
 ## ✨ 주요 기능
 
 ### 🎯 AI 기반 통합 분석
@@ -425,13 +436,3 @@ ollama pull solar:10.7b
 `정부-인재-관리` `AI-분석` `소셜미디어-분석` `이메일-분석` `트위터-분석` `Ollama` `로컬-AI` `Python` `데이터-분석` `오픈소스`
 
 ---
-
-<div align="center">
-
-**🎯 Made with ❤️ for Government Talent Management**
-
-[![GitHub stars](https://img.shields.io/github/stars/username/repo?style=social)](https://github.com/username/repo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/username/repo?style=social)](https://github.com/username/repo/network)
-[![GitHub issues](https://img.shields.io/github/issues/username/repo)](https://github.com/username/repo/issues)
-
-</div>
