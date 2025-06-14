@@ -1,5 +1,5 @@
 # 🎓 TRAS 특강 슬라이드
-## AI 기반 인재 추천 시스템으로 배우는 자연어처리와 BERT, 그리고 RLHF vs GPRO
+## AI 기반 인재 추천 시스템으로 배우는 자연어처리와 BERT, 그리고 RLHF vs GRPO
 
 ### 4시간 대학 특강 자료
 
@@ -17,7 +17,7 @@ TRAS 오픈소스 프로젝트를 통해 자연어처리의 기초부터 최신 
 | 10-20분 | Section 1 | TRAS 프로젝트 소개 | `section1_tras_intro.md` |
 | 20-60분 | Section 2 | 자연어처리 기초 | `section2_nlp_basics.md` |
 | 60-110분 | Section 3 | BERT 깊이 이해 | `section3_bert.md` |
-| 110-150분 | Section 4 | RLHF vs GPRO | `section4_rlhf_gpro.md` |
+| 110-150분 | Section 4 | RLHF vs GRPO | `section4_rlhf_grpo.md` |
 | 150-200분 | Section 6 | 멀티에이전트 협업 | `section6_multiagent_cooperation.md` |
 | 200-240분 | Section 5 | 정리 및 퀴즈 | `section5_summary_quiz.md` |
 
@@ -45,7 +45,7 @@ marp main.md --preview
 marp section1_tras_intro.md -o section1.html
 marp section2_nlp_basics.md -o section2.html
 marp section3_bert.md -o section3.html
-marp section4_rlhf_gpro.md -o section4.html
+marp section4_rlhf_grpo.md -o section4.html
 marp section5_summary_quiz.md -o section5.html
 
 # PDF로 변환 (Puppeteer 필요)
@@ -72,7 +72,7 @@ slides/
 ├── 📄 section1_tras_intro.md         # TRAS 소개 (10분)
 ├── 📄 section2_nlp_basics.md         # NLP 기초 (40분)
 ├── 📄 section3_bert.md               # BERT 심화 (50분)
-├── 📄 section4_rlhf_gpro.md          # RLHF vs GPRO (40분)
+├── 📄 section4_rlhf_grpo.md          # RLHF vs GRPO (40분)
 ├── 📄 section6_multiagent_cooperation.md  # 멀티에이전트 협업 (50분)
 └── 📄 section5_summary_quiz.md       # 정리 및 퀴즈 (40분)
 ```
@@ -112,9 +112,9 @@ slides/
 - **핵심 내용**: Multi-head attention, 사전훈련, 파인튜닝
 - **실습**: TRAS에서 BERT 모델 사용 및 성능 비교
 
-### 🎛️ Section 4: RLHF vs GPRO (40분)
+### 🎛️ Section 4: RLHF vs GRPO (40분)
 - **목표**: 인간 피드백 기반 AI 학습 방법론 마스터
-- **핵심 내용**: 보상 모델링, PPO, DPO, Constitutional AI
+- **핵심 내용**: 보상 모델링, PPO, GRPO, Constitutional AI
 - **실습**: 전문가 피드백 시스템 설계
 
 ### 🤝 Section 6: 멀티에이전트 협업 (50분)

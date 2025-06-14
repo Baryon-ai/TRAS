@@ -527,7 +527,7 @@ class TRAS_6_0_MultiAgent:
             "TRAS 1.0": "기본 이력서 분석",
             "TRAS 2.0": "NLP 기반 의미 분석", 
             "TRAS 3.0": "BERT 기반 맥락 이해",
-            "TRAS 4.0": "RLHF/GPRO 인간 피드백 학습",
+            "TRAS 4.0": "RLHF/GRPO 인간 피드백 학습",
             "TRAS 5.0": "Constitutional AI 윤리 강화",
             "TRAS 6.0": "멀티에이전트 협업 지능"  # ← 현재 버전
         }
@@ -657,7 +657,7 @@ class FutureMultiAgentSystems:
 
 ### 🏆 TRAS 버전별 성능 비교
 
-| 지표 | TRAS 1.0 | TRAS 4.0 (GPRO) | TRAS 6.0 (Multi-Agent) |
+| 지표 | TRAS 1.0 | TRAS 4.0 (GRPO) | TRAS 6.0 (Multi-Agent) |
 |------|-----------|------------------|-------------------------|
 | **정확도** | 65% | 89% | **94%** |
 | **전문가 만족도** | 60% | 87% | **96%** |
@@ -671,21 +671,21 @@ class FutureMultiAgentSystems:
 ```python
 improvement_analysis = {
     "정확도 향상": {
-        "from": "89% (GPRO)", 
+        "from": "89% (GRPO)", 
         "to": "94% (Multi-Agent)",
         "improvement": "+5.6%",
         "reason": "다중 전문가 관점의 종합적 판단"
     },
     
     "편향 감소": {
-        "from": "15% (GPRO)",
+        "from": "15% (GRPO)",
         "to": "8% (Multi-Agent)", 
         "improvement": "-46.7%",
         "reason": "전담 편향 검사 에이전트 + 상호 검증"
     },
     
     "설명 품질": {
-        "from": "90% (GPRO)",
+        "from": "90% (GRPO)",
         "to": "97% (Multi-Agent)",
         "improvement": "+7.8%", 
         "reason": "각 전문가의 상세한 근거 제시"
@@ -722,7 +722,7 @@ improvement_analysis = {
 Section 1: TRAS 소개 → "문제 정의와 목표 설정"
 Section 2: NLP 기초 → "언어 이해의 기초"  
 Section 3: BERT → "맥락을 이해하는 AI"
-Section 4: RLHF/GPRO → "인간과 정렬된 AI"
+Section 4: RLHF/GRPO → "인간과 정렬된 AI"
 Section 5: 정리 및 퀴즈 → "학습 내용 점검"
 Section 6: 멀티에이전트 → "협업하는 지능" ✨
 ```
