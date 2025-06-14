@@ -618,7 +618,7 @@ wheels = [
 
 [[package]]
 name = "integrated-social-media-talent-recommendation-analysis-system"
-version = "3.0.0"
+version = "3.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
