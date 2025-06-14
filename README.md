@@ -204,7 +204,19 @@ python email_analyzer.py
 python main.py
 ```
 
-### 4. 🤝 Multi-Agent 시스템 데모
+### 4. 🎯 GRPO 인간 피드백 학습 데모
+```bash
+# GRPO 모듈 테스트 (Section 4 구현)
+cd grpo/
+python integration_test.py     # 전체 GRPO 시스템 테스트
+python gpro_model.py          # GRPO 모델 테스트
+python human_feedback.py      # 인간 피드백 시뮬레이터 테스트
+
+# 성능 비교 실행
+python comparison_study.py    # BERT vs GRPO 성능 비교
+```
+
+### 5. 🤝 Multi-Agent 시스템 데모
 ```bash
 # TRAS 6.0 멀티에이전트 시스템 데모 실행
 uv run python multiagent/demo.py
@@ -216,7 +228,7 @@ python tras_agents.py  # 전문가 에이전트 테스트
 python mcp.py          # MCP 프로토콜 테스트
 ```
 
-### 5. 📊 샘플 데이터로 시작
+### 6. 📊 샘플 데이터로 시작
 프로그램 실행 후:
 1. 메뉴 13번 "전체 샘플 데이터 생성" 선택
 2. 메뉴 3번 "통합 분석 실행" 선택
@@ -440,8 +452,9 @@ ollama pull solar:10.7b
 - **🎯 마스터 코디네이터**: 모든 전문가 의견을 종합한 최종 결정
 - **📊 성능 대폭 향상**: 정확도 94%, 편향 감소 46.7%, 설명품질 97%
 
-🔧 **Section 6 강의 구현**
-- **🎭 "오케스트라 vs 원맨밴드"**: 멀티에이전트 철학 구현
+🔧 **Section 4-6 강의 구현**
+- **🎯 Section 4 "인간과 정렬된 AI"**: GRPO 인간 피드백 학습 구현
+- **🎭 Section 6 "오케스트라 vs 원맨밴드"**: 멀티에이전트 철학 구현
 - **📡 "AI들의 공통 언어"**: MCP 프로토콜 실제 동작
 - **🔗 "Google의 똑똑한 협업"**: A2A 협업 프레임워크
 - **🏛️ "정부 인재 추천 AI 협의체"**: 전문가별 특화 분석
@@ -449,7 +462,8 @@ ollama pull solar:10.7b
 - **🚀 TRAS 진화**: 1.0 → 6.0 성능 개선 추적
 
 🎯 **실무 적용**
-- **multiagent/**: Section 6 기반 완전한 모듈 구현
+- **grpo/**: Section 4 기반 RLHF/GRPO 인간 피드백 학습 시스템
+- **multiagent/**: Section 6 기반 완전한 멀티에이전트 모듈 구현
 - **demo.py**: 종합 데모 스크립트로 실제 동작 확인
 - **기존 시스템 통합**: TRAS 데이터베이스와 완전 호환
 - **투명성 보고서**: 의사결정 과정의 완전한 추적 가능
@@ -476,6 +490,14 @@ ollama pull solar:10.7b
 - **🚀 최적화 엔진**: 양자화, 동적 배치, 병렬 처리
 - **🎯 신뢰도 평가**: 다각도 신뢰성 평가와 도메인 적합성 검증
 - **🔗 TRAS 통합**: 기존 AI 제공자 시스템과 완벽 호환
+
+🎯 **GRPO 모듈 연구 프로젝트** (Section 4 기반 구현)
+- **🏆 RLHF/GRPO**: DeepSeek의 Group Relative Policy Optimization 구현
+- **👥 인간 피드백**: 전문가 의견 및 선호도 시뮬레이터
+- **🤖 OpenAI 검증**: GPT-4 기반 다중 전문가 검증 시스템
+- **⚖️ Constitutional AI**: 공정성, 투명성, 안전성 원칙 내장
+- **📊 성능 비교**: BERT vs GRPO 포괄적 분석 프레임워크
+- **🔄 지속적 학습**: 피드백 기반 모델 개선 파이프라인
 
 🔧 **기술적 개선**
 - **📁 다양한 데이터 형식**: CSV, JSON (Twitter API v2) 지원
