@@ -527,7 +527,7 @@ D) 더 복잡한 알고리즘
 
 ### 📧 연락처 정보
 - **GitHub**: [Baryon-ai/TRAS](https://github.com/Baryon-ai/TRAS)
-- **Email**: ai-team@example.com
+- **Email**: admin@barion.ai
 - **이슈 리포트**: GitHub Issues
 - **토론**: GitHub Discussions
 

@@ -24,7 +24,7 @@ backgroundColor: #f8f9fa
 
 ### 📧 연락처
 - GitHub: [Baryon-ai/TRAS](https://github.com/Baryon-ai/TRAS)
-- Email: ai-team@example.com
+- Email: admin@barion.ai
 
 ---
 

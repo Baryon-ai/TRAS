@@ -266,7 +266,7 @@ uv run python main.py
 ### 💬 문의 채널
 - **GitHub Issues**: 기술적 문제 및 버그 리포트
 - **GitHub Discussions**: 학습 관련 질문 및 토론
-- **Email**: ai-team@example.com (일반 문의)
+- **Email**: admin@barion.ai (일반 문의)
 
 ### 🤝 기여 방법
 - **내용 개선**: 설명이 부족한 부분의 보완 제안
@@ -276,6 +276,9 @@ uv run python main.py
 
 ### 📜 라이센스
 이 교육 자료는 **MIT 라이센스** 하에 배포됩니다.
+
+**Copyright (c) 2025 BarionLabs**
+
 - ✅ 상업적 사용 가능
 - ✅ 수정 및 재배포 가능
 - ✅ 교육 목적 자유 사용

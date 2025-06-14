@@ -544,6 +544,9 @@ uv run python scripts/github_release.py
 ## 📄 라이센스
 
 이 프로젝트는 **MIT 라이센스** 하에 배포됩니다.
+
+**Copyright (c) 2025 BarionLabs**
+
 - ✅ 상업적 사용 가능
 - ✅ 수정 및 배포 가능
 - ✅ 개인적 사용 가능
