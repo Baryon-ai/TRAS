@@ -54,7 +54,7 @@ class AnalysisConfig:
     """분석 설정 클래스"""
     ai_provider: str = "ollama"  # "ollama" 또는 "openai" 또는 "claude"
     ollama_url: str = "http://localhost:11434"
-    ollama_model: str = "llama3.1:8b"
+    ollama_model: str = "llama3.2:latest"
     openai_api_key: str = ""
     openai_model: str = "gpt-3.5-turbo"
     claude_api_key: str = ""
@@ -1229,7 +1229,7 @@ def install_ollama_guide():
    - Linux: curl -fsSL https://ollama.ai/install.sh | sh
 
 2. 한국어 지원 모델 다운로드:
-   ollama pull llama3.1:8b
+   ollama pull llama3.2:latest
    ollama pull qwen2:7b
    ollama pull solar:10.7b
 
@@ -1240,7 +1240,7 @@ def install_ollama_guide():
    http://localhost:11434
 
 권장 모델:
-- llama3.1:8b (영어/한국어 균형)
+- llama3.2:latest (영어/한국어 균형)
 - qwen2:7b (한국어 특화)  
 - solar:10.7b (고성능, 더 큰 메모리 필요)
 

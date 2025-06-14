@@ -130,7 +130,7 @@ pip install -r requirements.txt
 # Linux: curl -fsSL https://ollama.ai/install.sh | sh
 
 # 2. 한국어 지원 모델 다운로드
-ollama pull llama3.1:8b      # 균형잡힌 성능
+ollama pull llama3.2:latest      # 균형잡힌 성능
 ollama pull qwen2:7b         # 한국어 특화
 ollama pull solar:10.7b      # 고성능 (높은 메모리 필요)
 
@@ -353,7 +353,7 @@ pip install uv
 ### 🚀 Ollama 성능 향상
 ```bash
 # GPU 가속 사용 (NVIDIA GPU)
-ollama pull llama3.1:8b
+ollama pull llama3.2:latest
 
 # 경량화 모델 사용 (빠른 처리)
 ollama pull qwen2:7b
@@ -363,7 +363,7 @@ ollama pull solar:10.7b
 
 # 모델별 메모리 사용량
 # qwen2:7b     : ~4GB RAM
-# llama3.1:8b  : ~6GB RAM  
+# llama3.2:latest  : ~6GB RAM  
 # solar:10.7b  : ~8GB RAM
 ```
 
